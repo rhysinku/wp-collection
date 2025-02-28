@@ -1,0 +1,8 @@
+.vscode
+.ddev/config.yaml
+cw-db.sql.gz
+.ddev/addon-metadata/
+.ddev/docker-compose.communicate.yaml
+.ddev/docker-compose.phpmyadmin.yaml
+.ddev/docker-compose.phpmyadmin_norouter.yaml
+.ddev/traefik/
