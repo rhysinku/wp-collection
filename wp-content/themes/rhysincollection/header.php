@@ -13,7 +13,7 @@
 
 <body>
 <header class="header text-center">
-  <a class="site-title pt-lg-4 mb-0" href="#"> <?php echo get_the_title(); ?></a>
+  <a class="site-title pt-lg-4 mb-0" href="#"> <?php echo the_title(); ?></a>
 
   <nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -27,7 +27,10 @@
       $custom_logo_id = get_theme_mod('custom_logo');
       $logo = wp_get_attachment_image_src($custom_logo_id);
       if (has_custom_logo()) : ?>
-        <img class="mb-3 mx-auto logo" src="<?php echo esc_url($logo[0]) ?>" alt="<?php get_bloginfo('name') ?>">
+        <a href="<?php echo get_home_url(); ?>">
+          <img class="mb-3 mx-auto logo" src="<?php echo esc_url($logo[0]) ?>" alt="<?php get_bloginfo('name') ?>">
+        </a>
+
       <?php else : ?>
         <span><?php get_bloginfo('name') ?></span>
       <?php endif; ?>
