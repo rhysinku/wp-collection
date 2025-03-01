@@ -30,13 +30,11 @@ function bookstore_register_metabox()
     </div>
     <?php
   }
-
   add_meta_box('bookstore-rating-id', 'Book Rating', 'book_rating_metabox', 'book', 'normal', 'default');
 }
 
 function bookstore_save_rating_data($post_id , $post)
 {
-
     if (!isset($_POST['bookstore_rating_meta_nonce']) || !wp_verify_nonce($_POST['bookstore_rating_meta_nonce'], 'bookstore_save_rating_data_meta_nonce')){
     return;
   }
@@ -45,7 +43,6 @@ function bookstore_save_rating_data($post_id , $post)
   if($post_slug !== $post->post_type) {
     return;
   }
-
   if(array_key_exists('bookstore_rating', $_POST)){
     update_post_meta($post_id, 'bookstore_rating_meta_key', sanitize_text_field($_POST['bookstore_rating']));
   }

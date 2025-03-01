@@ -156,3 +156,13 @@ if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
 		}
 	}
 endif;
+
+
+  function post_style_assets(){
+    if (is_post_type_archive('movie')) {
+      wp_enqueue_style('frontpage-assets-css', get_template_directory_uri() . '/assets/css/movie.css', [], '1.0', 'all');
+    }
+  }
+
+
+  add_action('wp_enqueue_scripts', 'post_style_assets');

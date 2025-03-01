@@ -11,7 +11,7 @@
 
       <p> Post Type: <?php echo get_post_type() ?></p>
       <p> GET ID: <?php echo get_the_ID() ?></p>
-
+    <p>Alias: <?php the_field('movie_rating') ?> </p>
     <p>Taxonomy:</p>
     <ul>
       <?php $genres = get_the_terms(get_the_ID(), 'book-reading-level');
