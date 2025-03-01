@@ -1,4 +1,5 @@
 <div class="container">
+
   <header class="content-header">
     <div class="meta mb-3">
       <span class="date">Published <?php the_date() ?></span>
@@ -14,9 +15,12 @@
       <?php the_post_thumbnail('large'); ?>
     </div>
   <?php endif; ?>
-
-  <p> Post Type: <?php echo get_post_type() ?></p>
   <p> GET ID: <?php echo get_the_ID() ?></p>
+  <p> Post Type: <?php echo get_post_type() ?></p>
+  <p>
+    Rating:
+    <span><?php the_field('movie_rating'); ?> Star</span>
+  </p>
   <p>Taxonomy:</p>
   <ul>
     <?php $genres = get_the_terms(get_the_ID(), 'book-reading-level');
